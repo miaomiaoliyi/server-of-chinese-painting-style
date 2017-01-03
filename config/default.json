@@ -1,0 +1,7 @@
+{
+  "port": 8000,
+  "dataPath": "/tmp/neural-style-server/",
+  "neuralStylePath": "/home/liyi/neural-style-lua/",
+  "username": "user",
+  "password": "password"
+}
