@@ -11,6 +11,7 @@
   <template>
     <style>
       :host {
+        
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -18,12 +19,18 @@
 
       .create-new-image-content {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 800px;
+      }
+
+      .two-image{
+        display: flex;
         flex-direction: row;
         align-items: center;
       }
-
       .image-picker {
-        margin: 8px;
+        margin: 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -47,28 +54,31 @@
     </style>
     <paper-card heading="创建新图像">
       <div class="card-content create-new-image-content">
-        <div class="image-picker">
-          <iron-image id="contentImagePreview" class="input-image" sizing="contain"></iron-image>
-          <input
-             type="file"
-             id="contentFileInput"
-             class="hidden"
-             accept="image/*"
-             on-change="contentFileChanged_">
-          <paper-button on-tap="chooseContentImage_">选择内容图片</paper-button>
-        </div>
-        <div class="image-picker">
-          <iron-image id="styleImagePreview" class="input-image" sizing="contain"></iron-image>
-          <input
-             type="file"
-             id="styleFileInput"
-             class="hidden"
-             accept="image/*"
-             on-change="styleFileChanged_">
-          <paper-button on-tap="chooseStyleImage_">选择风格图片</paper-button>
+        <div class="two-image">
+          <div class="image-picker">
+            <iron-image id="contentImagePreview" class="input-image" sizing="contain"></iron-image>
+            <input
+              type="file"
+              id="contentFileInput"
+              class="hidden"
+              accept="image/*"
+              on-change="contentFileChanged_">
+            <paper-button on-tap="chooseContentImage_">选择内容图片</paper-button>
+          </div>
+          <div class="image-picker">
+            <iron-image id="styleImagePreview" class="input-image" sizing="contain"></iron-image>
+            <input
+              type="file"
+              id="styleFileInput"
+              class="hidden"
+              accept="image/*"
+              on-change="styleFileChanged_">
+            <paper-button on-tap="chooseStyleImage_">选择风格图片</paper-button>
+          </div>
         </div>
         <render-settings id="renderSettings"></render-settings>
       </div>
+
       <div class="card-actions">
         <div class="action-buttons">
           <paper-button
@@ -84,8 +94,10 @@
         </div>
         <paper-progress id="uploadProgress" class="hidden" value="{{ uploadProgress_ }}"></paper-progress>
       </div>
+
     </paper-card>
   </template>
+
   <script>
     (function() {
       'use strict';

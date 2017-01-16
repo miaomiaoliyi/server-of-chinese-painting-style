@@ -14,12 +14,14 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        width: 830px;
+        height: 350px;
       }
 
       .source-images-column {
         margin: 16px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
       }
 
       .source-image {
@@ -35,6 +37,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-left: 100px;
       }
 
       .action-buttons {
@@ -64,19 +67,23 @@
              value="{{ outputUrlIndex_ }}">
           </paper-slider>
         </div>
+        <!--
         <render-settings disabled="true" settings="{{ status.settings }}"></render-settings>
+        -->
       </div>
       <div class="card-actions">
         <div class="action-buttons">
           <paper-button
              disabled="{{ cancelButtonDisabled_ }}"
              on-tap="cancel_">
-            Cancel
+            取消
           </paper-button>
+<!--
           <paper-button
              on-tap="copyToNewImage_">
             Copy to New Image
           </paper-button>
+-->
         </div>
       </div>
     </paper-card>
